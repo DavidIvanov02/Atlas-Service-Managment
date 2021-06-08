@@ -1,9 +1,9 @@
 {
-  "name": "vue-notus",
-  "homepage": "https://demos.creative-tim.com/vue-notus/",
-  "version": "1.0.0",
-  "description": "Vue Notus - A free Tailwind CSS and VueJS UI Kit and Admin by Creative Tim.",
-  "repository": "https://github.com/creativetimofficial/vue-notus",
+  "name": "atlas-service-managment",
+  "homepage": "https://atlas.noit.eu/",
+  "version": "1.0.1",
+  "description": "Project aim is to monitor the distribution of the calculations of the experimental ATLAS in the CENTER and reviewing the current state and load of the computer resources, how many CPUs are currently available. The whole process is visualized through interactive diagrams.",
+  "repository": "https://github.com/amilchov/Atlas-Service-Management",
   "license": "MIT",
   "scripts": {
     "serve": "vue-cli-service serve",
@@ -17,15 +17,29 @@
     "@fortawesome/fontawesome-free": "5.14.0",
     "@popperjs/core": "2.5.1",
     "@tailwindcss/custom-forms": "0.2.1",
-    "axios": "^0.21.0",
+    "axios": "^0.21.1",
+    "buefy": "^0.9.4",
     "chart.js": "2.9.3",
     "core-js": "3.6.5",
     "gulp": "4.0.2",
     "gulp-append-prepend": "1.0.8",
+    "moment": "^2.29.1",
+    "popper.js": "^1.16.1",
+    "pug": "^3.0.0",
     "tailwindcss": "1.8.10",
+    "v-img": "^0.2.0",
     "vue": "2.6.12",
-    "vue-axios": "^3.2.0",
+    "vue-axios": "^3.2.1",
+    "vue-good-table": "^2.21.4",
+    "vue-inner-image-zoom": "^1.0.1",
+    "vue-js-modal": "^2.0.0-rc.6",
+    "vue-json-csv": "^1.2.12",
+    "vue-loading-overlay": "^3.4.2",
+    "vue-material": "^1.0.0-beta-15",
+    "vue-moment": "^4.1.0",
     "vue-router": "3.4.3",
+    "vuejs-loading-plugin": "^1.0.51",
+    "vuetify": "^2.4.4",
     "vuex": "^3.6.0"
   },
   "devDependencies": {
@@ -35,6 +49,7 @@
     "babel-eslint": "10.1.0",
     "eslint": "6.8.0",
     "eslint-plugin-vue": "6.2.2",
+    "vue-styleguidist": "^4.35.0",
     "vue-template-compiler": "2.6.12"
   },
   "eslintConfig": {
@@ -46,7 +61,10 @@
       "plugin:vue/essential",
       "eslint:recommended"
     ],
-    "rules": {},
+    "rules": {
+      "no-console": "off",
+      "no-unused-vars": "off"
+    },
     "parserOptions": {
       "parser": "babel-eslint"
     }
