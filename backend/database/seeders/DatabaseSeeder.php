@@ -3,6 +3,9 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
+use App\Http\Api\Chart\Seeders\ChartSeeder;
+use App\Http\Api\Role\Seeders\RoleSeeder;
+use App\Http\Api\User\Seeders\UserSeeder;
 
 class DatabaseSeeder extends Seeder
 {
@@ -11,8 +14,12 @@ class DatabaseSeeder extends Seeder
      *
      * @return void
      */
-    public function run()
+    public function run(): void
     {
-        // \App\Models\UserResource::factory(10)->create();
+        $this->call([
+            ChartSeeder::class,
+            RoleSeeder::class,
+            UserSeeder::class
+        ]);
     }
 }

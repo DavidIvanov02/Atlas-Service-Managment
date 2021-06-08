@@ -2,8 +2,12 @@
 
 namespace App\Exceptions;
 
-use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
 use Throwable;
+use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
+use Illuminate\Database\Eloquent\ModelNotFoundException;
+use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
+use Illuminate\Http\Request;
 
 class Handler extends ExceptionHandler
 {
@@ -27,14 +31,43 @@ class Handler extends ExceptionHandler
     ];
 
     /**
-     * Register the exception handling callbacks for the application.
+     * Report or log an exception.
      *
+     * @param Throwable $exception
      * @return void
+     *
+     * @throws Throwable
      */
-    public function register()
+    public function report(Throwable $exception)
     {
-        $this->reportable(function (Throwable $e) {
-            //
-        });
+        parent::report($exception);
+    }
+
+    /**
+     * Render an exception into an HTTP response.
+     *
+     * @param  Request  $request
+     * @param Throwable $exception
+     * @return Response
+     * @throws Throwable
+     */
+    public function render($request, Throwable $exception): Response
+    {
+        if ($exception instanceof ModelNotFoundException)
+        {
+            $exception = new NotFoundHttpException($exception->getMessage(), $exception);
+        }
+
+        if ($this->isHttpException($exception))
+        {
+            if ($exception->getStatusCode() === RESPONSE::HTTP_NOT_FOUND)
+            {
+                return response()->json(['message' => 'Page not found'], RESPONSE::HTTP_NOT_FOUND);
+            }
+
+            return $this->renderHttpException($exception);
+        }
+
+        return parent::render($request, $exception);
     }
 }
