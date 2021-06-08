@@ -1,9 +1,11 @@
-![LOGO](https://cds.cern.ch/record/1170735/files/ATLAS-Logo-Blue-transparent.png)
+![LOGO](https://github.com/amilchov/Atlas-Service-Management/blob/main/asm_logo_administrative.png)
 # Welcome to Atlas Service Managment!
 
 Hello! Currently, there are only two of us in our team who support the application:
  1. Alex Vasilev Milchov - web application development, testing, configuration and management.
  2. David Dimitrov Ivanov - development, testing, configuration and management of the server part of the project.
+
+
 
 # Supervisor
 
@@ -12,7 +14,7 @@ Hello! Currently, there are only two of us in our team who support the applicati
 
 ## Summary
 
-Project aim is to monitor the distribution of the calculations of the experimental ATLAS in the CENTER and reviewing the current state and load of the computer resources, how many CPUs are currently available. The whole process is visualized through interactive diagrams.
+Project aim is to monitor the distribution of the calculations of the experimental ATLAS in the CERN and reviewing the current state and load of the computer resources, how many CPUs are currently available. The whole process is visualized through interactive diagrams.
 
 ## Level of complexity
 
